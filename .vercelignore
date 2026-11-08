@@ -1,0 +1,10 @@
+node_modules
+.vercel
+dist
+docs
+*.docx
+AGENTS.md
+README.md
+*.tsbuildinfo
+.DS_Store
+.env*

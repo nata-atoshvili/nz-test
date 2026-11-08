@@ -1,7 +1,9 @@
 # LOM AI
 
 Учебный чат с mock-агентом: несколько диалогов, streaming, калькулятор, остановка и повтор после ошибки.
-Без backend и внешних AI API. [Демонстрация](docs/demo.webm).
+Без backend и внешних AI API.
+
+[Открыть приложение](https://lom-ai-neiroznanie.vercel.app) · [Видеодемонстрация](docs/demo.webm).
 
 ## Запуск
 
