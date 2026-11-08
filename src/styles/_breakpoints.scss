@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'variables';
+
+@function breakpoint-min($name) {
+    @if not map.has-key(variables.$grid-breakpoints, $name) {
+        @error 'Unknown breakpoint: #{$name}';
+    }
+
+    @return map.get(variables.$grid-breakpoints, $name);
+}
+
+@mixin media-breakpoint-up($name) {
+    $min: breakpoint-min($name);
+
+    @if $min > 0 {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin media-breakpoint-down($name) {
+    $min: breakpoint-min($name);
+
+    @if $min <= 0 {
+        @error 'Breakpoint #{$name} has no lower viewport range';
+    }
+
+    // Avoid overlap with media-breakpoint-up at fractional viewport widths.
+    @media (max-width: ($min - 0.02px)) {
+        @content;
+    }
+}

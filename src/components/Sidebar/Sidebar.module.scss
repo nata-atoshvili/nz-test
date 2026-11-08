@@ -1,0 +1,111 @@
+.sidebar {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__title {
+        box-sizing: border-box;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &__list {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        overflow-y: auto;
+    }
+
+    &__chat {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        padding-right: 6px;
+
+        &:hover {
+            background: var(--brand-sky);
+        }
+
+        &_active {
+            box-sizing: border-box;
+            background: var(--brand-skyMid);
+            color: var(--brand-primaryDark);
+            font-weight: 600;
+        }
+    }
+
+    &__delete-button {
+        box-sizing: border-box;
+        flex-shrink: 0;
+        color: var(--brand-inkSoft);
+    }
+
+    &__chat-button {
+        box-sizing: border-box;
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+        color: var(--brand-inkSoft);
+        text-align: left;
+        font-size: 13px;
+        cursor: pointer;
+        font-family: inherit;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+
+        &:focus-visible {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 3px;
+        }
+
+        &_active {
+            box-sizing: border-box;
+            color: var(--brand-primaryDark);
+            font-weight: 600;
+        }
+    }
+
+    &__chat-title {
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex: 1;
+    }
+
+    &__activity {
+        box-sizing: border-box;
+        width: 6px;
+        height: 6px;
+        background: var(--brand-primary);
+        border-radius: 50%;
+        flex-shrink: 0;
+        animation: pulse 1s infinite;
+
+        @media (prefers-reduced-motion: reduce) {
+            animation: none;
+        }
+    }
+
+    &__new-button {
+        flex-shrink: 0;
+    }
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.3;
+    }
+}

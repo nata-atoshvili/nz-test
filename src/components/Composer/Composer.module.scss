@@ -1,0 +1,55 @@
+@use '@/styles/mixins';
+
+.composer {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px 32px 24px;
+    flex-shrink: 0;
+
+    @include mixins.media-breakpoint-down(md) {
+        padding: 12px 16px 16px;
+    }
+
+    &__field {
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+        padding: 12px;
+        background: var(--brand-white);
+        border: 1px solid var(--brand-line);
+        border-radius: 12px;
+
+        &:focus-within {
+            border-color: var(--brand-primary);
+        }
+    }
+
+    &__input {
+        box-sizing: border-box;
+        font-size: 14px !important;
+        line-height: 1.7 !important;
+    }
+
+    &__actions {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__counter {
+        box-sizing: border-box;
+        color: var(--brand-inkSoft);
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    &__send-button,
+    &__stop-button {
+        box-sizing: border-box;
+        flex-shrink: 0;
+    }
+}

@@ -1,0 +1,115 @@
+.assistant-message {
+    box-sizing: border-box;
+    margin-bottom: 32px;
+
+    &__body {
+        box-sizing: border-box;
+        min-width: 0;
+    }
+
+    &__author {
+        box-sizing: border-box;
+        font-size: 12px;
+        font-weight: 650;
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        box-sizing: border-box;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--brand-ink);
+
+        &_streaming {
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 5px;
+                height: 15px;
+                margin-left: 3px;
+                background: var(--brand-primary);
+                vertical-align: middle;
+                animation: pulse 1s infinite;
+
+                @media (prefers-reduced-motion: reduce) {
+                    animation: none;
+                }
+            }
+        }
+    }
+
+    &__status {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--brand-inkSoft);
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    &__completed {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 12px;
+        color: var(--brand-inkSoft);
+        font-size: 11px;
+    }
+
+    &__tool {
+        box-sizing: border-box;
+        padding: 10px 12px;
+        margin-bottom: 16px;
+        background: var(--brand-paper);
+        border-radius: 8px;
+        color: var(--brand-inkSoft);
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    &__tool-summary {
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:focus-visible {
+            outline: 3px solid var(--brand-primary);
+            outline-offset: 3px;
+        }
+    }
+
+    &__tool-result {
+        box-sizing: border-box;
+        margin-top: 12px;
+        line-height: 1.65;
+        margin-bottom: 0;
+    }
+
+    &__stopped {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 12px;
+        font-size: 12px;
+        color: var(--brand-inkSoft);
+    }
+
+    &__error-text {
+        box-sizing: border-box;
+        margin-top: 0;
+    }
+
+    &__stopped-label {
+        line-height: 1.65;
+    }
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.3;
+    }
+}
